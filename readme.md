@@ -60,7 +60,7 @@ The atom type resembles one of the following patterns:
 The smoothy.yml file resembles an object with the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | api | string | yes | The version of the marketplace specification that is used in this file. |
 | meta | [meta](#meta) | yes | Meta information about the application that is shown in the marketplace. |
 | form | [form](#form) | yes | The layout of the form that is used to gather the required input to install the application. |
@@ -142,7 +142,7 @@ The question type is one of the following strings:
 The select option object has the following properties:
 
 | property | type | required | description |
-|---|---|---|---|---|
+|---|---|---|---|
 | value | string | yes |  |
 | label | string | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
