@@ -55,9 +55,9 @@ The atom type resembles one of the following patterns:
 
 ...
 
-## The `smoothy.yml` file
+## The smoothy.yml file
 
-The smoothy.yml file resembles an object with the following properties:
+The `smoothy.yml` file resembles an object with the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -71,7 +71,7 @@ The smoothy.yml file resembles an object with the following properties:
 
 The meta property resembles an object with the following properties:
 
-| property | type | required | description |
+| Property | Type | Required | Description |
 |---|---|---|---|
 | icon | string | no |  |
 | name | string | yes |  |
@@ -84,7 +84,7 @@ The meta property resembles an object with the following properties:
 
 The requirement object has the following properties:
 
-| property | type | required | description |
+| Property | Type | Required | Description |
 |---|---|---|---|
 | title | string | yes |  |
 | description | text | yes |  |
@@ -97,7 +97,7 @@ The form property resembles a list of [form steps](#form-steps).
 
 The form group object has the following properties:
 
-| property | type | required | description |
+| Property | Type | Required | Description |
 |---|---|---|---|
 | title | string | yes |  |
 | description | text | no |  |
@@ -108,7 +108,7 @@ The form group object has the following properties:
 
 The question object has the following properties:
 
-| property | type | required | default | description |
+| Property | Type | Required | Default | Description |
 |---|---|---|---|---|
 | variable | string (unique) | yes |  |  |
 | label | string | yes |  |  |
@@ -141,7 +141,7 @@ The question type is one of the following strings:
 
 The select option object has the following properties:
 
-| property | type | required | description |
+| Property | Type | Required | Description |
 |---|---|---|---|
 | value | string | yes |  |
 | label | string | yes |  |
@@ -155,6 +155,6 @@ The select option object has the following properties:
 
 ...
 
-## The `migrations.yml` file
+## The migrations.yml file
 
 ...
