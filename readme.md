@@ -340,13 +340,13 @@ The migration object has the following properties:
 
 ### Change
 
-The change object has *one* of the following properties:
+The change object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
 | if | [boolean expression](#boolean-expression) | no |  |
 
-In addition, it has *one* of the following properties:
+In addition, it also has *one* of the following properties:
 
 | Property | Type | Description |
 |---|---|---|
@@ -354,8 +354,8 @@ In addition, it has *one* of the following properties:
 | rename variable | [rename variable](#rename-variable) | Rename a variable in the application configuration. |
 | remove variable | [remove variable](#remove-variable) | Remove a variable from the application configuration. |
 | replace variable | [replace variable](#replace-variable) | Replace the value of a variable in the application configuration. |
-| update endpoint | [update endpoint](#update-endpoint) | Update all the existing endpoints of a given type. |
-| remove endpoint | [remove endpoint](#remove-endpoint) | Remove all the existing endpoints of a given type. |
+| update endpoint | [update endpoint](#update-endpoint) | Update all the endpoints of a given type. |
+| remove endpoint | [remove endpoint](#remove-endpoint) | Remove all the endpoints of a given type. |
 
 ### Add variable
 
