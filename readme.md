@@ -165,7 +165,7 @@ The deployment property resembles a list of [resources](#resource).
 The resource object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | resource | [resource type](#resource-type) | yes |  |
 | name | string (unique per resource type) | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
@@ -186,7 +186,7 @@ The resource type is one of the following strings:
 The container object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | image | [parameterized string](#parameterized-string) | yes |  |
 | endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
@@ -198,7 +198,7 @@ The container object has the following properties:
 The endpoint object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | type | [endpoint type](#endpoint-type) | yes |  |
 | port | integer | yes |  |
 | domain | [parameterized string](#parameterized-string) | no |  |
@@ -217,7 +217,7 @@ The endpoint type is one of the following strings:
 The volume mount object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | volume | [reference](#reference) to a [volume resource](#resource) | yes |  |
 | mounth_path | [parameterized string](#parameterized-string) | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
@@ -227,7 +227,7 @@ The volume mount object has the following properties:
 The environment variable object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | key | [parameterized string](#parameterized-string) | yes |  |
 | value | [expression](#expression) | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
@@ -237,7 +237,7 @@ The environment variable object has the following properties:
 The environment variable map object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | map | [reference](#reference) to a [variable with type map](#question) | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
 
@@ -246,7 +246,7 @@ The environment variable map object has the following properties:
 The command part object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | part | [expression](#expression) | yes |  |
 | if | [boolean expression](#boolean-expression) | no |  |
 
@@ -255,7 +255,7 @@ The command part object has the following properties:
 The interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | endpoints | list of [endpoint interfaces](#endpoint-interface) | no |  |
 | volumes | list of [volume interfaces](#volume-interface) | no |  |
 | logs | list of [log interfaces](#log-interface) | no |  |
@@ -265,7 +265,7 @@ The interface object has the following properties:
 The endpoint interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | show | list of [show endpoint interfaces](#show-endpoint-interface) | no |  |
 | create | list of [create endpoint interfaces](#create-endpoint-interface) | no |  |
 
@@ -274,7 +274,7 @@ The endpoint interface object has the following properties:
 The show endpoint interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | title | string | yes |  |
 | description | text | no |  |
 | endpoint | [reference](#reference) to an [endpoint](#endpoint) | yes |  |
@@ -285,7 +285,7 @@ The show endpoint interface object has the following properties:
 The create endpoint interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | title | string | yes |  |
 | description | text | no |  |
 | container | [reference](#reference) to a [container resource](#resource) | yes |  |
@@ -305,7 +305,7 @@ The create endpoint type is one of the following strings:
 The volume interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> Uploaded documents |
 | description | text | no | A short description explaining the user which data is contained in the volume. |
 | volume | [reference](#reference) to a [volume resource](#resource) | yes | The volume that should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ volume.mysql_data }} |
@@ -316,7 +316,7 @@ The volume interface object has the following properties:
 The log interface object has the following properties:
 
 | Property | Type | Required | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> MySQL logs |
 | description | text | no | A short description explaining the user which logs are shown. |
 | container | [reference](#reference) to a [container resource](#resource) | yes | The container of which the logs should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ container.mysql }} |
