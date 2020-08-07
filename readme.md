@@ -64,9 +64,9 @@ The reference type is a string with the following format:
 - {{ endpoint.mysql_internal_endpoint }}
 - {{ volume.mysql_data }}
 
-## The smoothy.yml file
+## The template.yml file
 
-The `smoothy.yml` file resembles an object with the following properties:
+The `template.yml` file resembles an object with the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
