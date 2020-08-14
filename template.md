@@ -122,10 +122,19 @@ The container object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | image | [parameterized string](./types.md#parameterized-string) | yes |  |
+| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry)) | no |  |
 | endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
 | command | string, list of [command parts](#command-part) | no |  |
+| memory | integer, [parameterized string](./types.md#parameterized-string) | yes |  |
+| cpus | integer, [parameterized string](./types.md#parameterized-string) | yes |  |
+
+## Docker Registry
+
+Docker Registries can be added on your team's Settings page in Smoothy. You can reference a Docker Registry as follows:
+
+{{ docker_registry.`id` }}
 
 ## Endpoint
 
