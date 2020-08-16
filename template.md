@@ -61,6 +61,8 @@ The question object has the following properties:
 | type | [question type](#question-type) | yes |  |  |
 | options | list of [select options](#select-option) | if type is select |  |  |
 | image_type | [parameterized string](./types.md#parameterized-string) | if type is image |  |  |
+| minimum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
+| maximum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
 | immutable | [boolean expression](./types.md#boolean-expression) | no | false |  |
 | if | [boolean expression](./types.md#boolean-expression) | no |  |  |
 
@@ -74,10 +76,13 @@ The question type is one of the following strings:
 - boolean
 - url
 - integer
+- number
+- binary_number
 - password
 - email
 - image
 - timezone
+- code
 - map
 
 ## Select option

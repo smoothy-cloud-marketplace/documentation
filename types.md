@@ -6,16 +6,32 @@ The marketplace API supports the following primitive types:
 - text
 - boolean
 - integer
+- number
 - map
 - null
 
 In addition, it also support the following complex types:
 
+- [Binary-number](#binary-number)
 - [Expression](#expression)
 - [Boolean expression](#boolean-expression)
 - [Atom](#atom)
 - [Parameterized string](#parameterized-string)
 - [Reference](#reference)
+
+# Binary number
+
+The binary number type resembles a number to the power of two. Examples:
+
+- 64 (= 2^6)
+- 128 (= 2^7)
+- 256 (= 2^8)
+- 512 (= 2^9)
+- 1024 (= 2^10)
+- 2048 (= 2^11)
+- 4096 (= 2^12)
+- 8192 (= 2^13)
+- ...
 
 ## Expression
 
