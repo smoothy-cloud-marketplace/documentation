@@ -84,6 +84,7 @@ The question type is one of the following strings:
 - timezone
 - code
 - map
+- list
 
 ## Select option
 
