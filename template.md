@@ -112,6 +112,7 @@ The resource object has the following properties:
 
 The following resource types have some additional properties:
 
+- config_file:  [additional properties](#config-file)
 - container:  [additional properties](#container)
 
 ## Resource type
@@ -119,7 +120,16 @@ The following resource types have some additional properties:
 The resource type is one of the following strings:
 
 - volume
+- config_file
 - container
+
+## Config file
+
+The config file object has the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| contents | text | yes |  |
 
 ## Container
 
@@ -131,6 +141,7 @@ The container object has the following properties:
 | image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry)) | no |  |
 | endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
+| config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
 | command | string, list of [command parts](#command-part) | no |  |
 | memory | integer, [parameterized string](./types.md#parameterized-string) | yes |  |
@@ -161,6 +172,16 @@ The endpoint type is one of the following strings:
 - container_port
 - host_port
 - domain
+
+## Config file mount
+
+The config file mount object has the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| config_file | [reference](./types.md#reference) to a [config file resource](#resource) | yes |  |
+| mounth_path | [parameterized string](./types.md#parameterized-string) | yes |  |
+| if | [boolean expression](./types.md#boolean-expression) | no |  |
 
 ## Volume mount
 
