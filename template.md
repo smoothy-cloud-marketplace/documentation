@@ -60,7 +60,6 @@ The question object has the following properties:
 | default | map, [expression](./types.md#expression) | no |  |  |
 | type | [question type](#question-type) | yes |  |  |
 | options | list of [select options](#select-option) | if type is select |  |  |
-| image_type | [parameterized string](./types.md#parameterized-string) | if type is image |  |  |
 | minimum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
 | maximum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
 | immutable | [boolean expression](./types.md#boolean-expression) | no | false |  |
@@ -80,7 +79,7 @@ The question type is one of the following strings:
 - binary_number
 - password
 - email
-- image
+- code_repository
 - timezone
 - code
 - map
@@ -112,16 +111,27 @@ The resource object has the following properties:
 
 The following resource types have some additional properties:
 
-- config_file:  [additional properties](#config-file)
-- container:  [additional properties](#container)
+- image: [additional properties](#image)
+- config_file: [additional properties](#config-file)
+- container: [additional properties](#container)
 
 ## Resource type
 
 The resource type is one of the following strings:
 
+- image
 - volume
 - config_file
 - container
+
+## Image
+
+The image has the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| dockerfile | string | yes |  |
+| arguments | list of [environment variables](#environment-variable) | no |  |
 
 ## Config file
 
@@ -137,8 +147,8 @@ The container object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| image | [parameterized string](./types.md#parameterized-string) | yes |  |
-| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry)) | no |  |
+| image | [parameterized string](./types.md#parameterized-string), [reference](./types.md#reference) to an [Image resource](#resource) | yes |  |
+| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry) | no |  |
 | endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
