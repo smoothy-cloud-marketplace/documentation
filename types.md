@@ -58,7 +58,7 @@ The table below illustrates the possibilities of expressions. In the examples, t
 | `{{ 1 + 1 + 1 }}` | 3 |
 | `{{ 1 + 1 - 1 }}` | 1 |
 | `{{ 9 / 3 - 1 }}` | 2 |
-| `{{ (4 / 3)|round + 4 }}` | 5 |
+| `{{ (4 / 3)\|round + 4 }}` | 5 |
 | `price: {{ variable.price * 0.8 }}.99` | "price: 16.99" |
 | *comparisons* |  |
 | `{{ 1 == 1 }}` | true |
@@ -81,11 +81,11 @@ The table below illustrates the possibilities of expressions. In the examples, t
 | `{{ str_random() }}` | "M2rbzUqcBKepscWO" |
 | `{{ str_random(8) }}` | "r7PA4fxs" |
 | *filters* |  |
-| `Hello {{ variable.name|upper }}` | "Hello JOHN" |
-| `Hello {{ variable.name|upper }}` | "Hello JOHN" |
-| `Hello {{ 'john'|capitalize }}` | "Hello John" |
-| `Hello {{ variable.name|default('Jane') }}` | "Hello John" |
-| `Hello {{ variable.first_name|default('Jane') }}` | "Hello Jane" |
+| `Hello {{ variable.name\|upper }}` | "Hello JOHN" |
+| `Hello {{ variable.name\|upper }}` | "Hello JOHN" |
+| `Hello {{ 'john'\|capitalize }}` | "Hello John" |
+| `Hello {{ variable.name\|default('Jane') }}` | "Hello John" |
+| `Hello {{ variable.first_name\|default('Jane') }}` | "Hello Jane" |
 
 ## Reference
 
