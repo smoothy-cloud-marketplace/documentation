@@ -20,7 +20,7 @@ The change object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 In addition, it also has *one* of the following properties:
 
@@ -77,7 +77,7 @@ The replacement object has the following properties:
 |---|---|---|---|
 | case | [expression](./types.md#expression) | yes | The old value of the variable. |
 | value | [expression](./types.md#expression) | yes | The new value of the variable. |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Update endpoint
 
@@ -91,7 +91,7 @@ The update endpoint object has the following properties:
 | new_container | [reference](./types.md#reference) to a [container resource](./template.md#resource) | no |  |
 | new_type | [create endpoint type](./template.md#create-endpoint-type) | no |  |
 | new_port | integer | no |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Remove endpoint
 
@@ -102,4 +102,4 @@ The remove endpoint object has the following properties:
 | container | [reference](./types.md#reference) to a [container resource](./template.md#resource) | yes |  |
 | type | [create endpoint type](./template.md#create-endpoint-type) | yes |  |
 | port | integer | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |

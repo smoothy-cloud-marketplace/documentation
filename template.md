@@ -45,7 +45,7 @@ The form step object has the following properties:
 | title | string | yes |  |
 | description | text | no |  |
 | questions | list of [questions](#question) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Question
 
@@ -56,14 +56,14 @@ The question object has the following properties:
 | variable | string (unique) | yes |  |  |
 | label | string | yes |  |  |
 | hint | text | no |  |  |
-| required | [boolean expression](./types.md#boolean-expression) | no | false |  |
+| required | [expression](./types.md#expression) | no | false |  |
 | default | map, [expression](./types.md#expression) | no |  |  |
 | type | [question type](#question-type) | yes |  |  |
 | options | list of [select options](#select-option) | if type is select |  |  |
 | minimum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
 | maximum | integer, number, [binary number](./types.md#binary-number) (depending on type) | no |  |  |
-| immutable | [boolean expression](./types.md#boolean-expression) | no | false |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |  |
+| immutable | [expression](./types.md#expression) | no | false |  |
+| if | [expression](./types.md#expression) | no |  |  |
 
 ## Question type
 
@@ -93,7 +93,7 @@ The select option object has the following properties:
 |---|---|---|---|
 | value | string | yes |  |
 | label | string | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Deployment
 
@@ -107,7 +107,7 @@ The resource object has the following properties:
 |---|---|---|---|
 | resource | [resource type](#resource-type) | yes |  |
 | name | string (unique per resource type) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 The following resource types have some additional properties:
 
@@ -130,6 +130,7 @@ The image has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
+| code_repository | [reference](./types.md#reference) to a [variable](#question) of type [code_repository](#question-type) | yes |  |
 | dockerfile | string | yes |  |
 | arguments | list of [environment variables](#environment-variable) | no |  |
 
@@ -147,15 +148,15 @@ The container object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| image | [parameterized string](./types.md#parameterized-string), [reference](./types.md#reference) to an [Image resource](#resource) | yes |  |
+| image | [expression](./types.md#expression), [reference](./types.md#reference) to an [Image resource](#resource) | yes |  |
 | image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry) | no |  |
 | endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
 | command | string, list of [command parts](#command-part) | no |  |
-| memory | integer, [parameterized string](./types.md#parameterized-string) | yes |  |
-| cpus | integer, [parameterized string](./types.md#parameterized-string) | yes |  |
+| memory | integer, [expression](./types.md#expression) | yes |  |
+| cpus | integer, [expression](./types.md#expression) | yes |  |
 
 ## Docker Registry
 
@@ -172,8 +173,8 @@ The endpoint object has the following properties:
 | name | string (unique) | yes |  |
 | type | [endpoint type](#endpoint-type) | yes |  |
 | port | integer | yes |  |
-| domain | [parameterized string](./types.md#parameterized-string) | no |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| domain | [expression](./types.md#expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Endpoint type
 
@@ -190,8 +191,8 @@ The config file mount object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | config_file | [reference](./types.md#reference) to a [config file resource](#resource) | yes |  |
-| mounth_path | [parameterized string](./types.md#parameterized-string) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| mounth_path | [expression](./types.md#expression) | yes |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Volume mount
 
@@ -200,8 +201,8 @@ The volume mount object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | volume | [reference](./types.md#reference) to a [volume resource](#resource) | yes |  |
-| mounth_path | [parameterized string](./types.md#parameterized-string) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| mounth_path | [expression](./types.md#expression) | yes |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Environment variable
 
@@ -209,9 +210,9 @@ The environment variable object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| key | [parameterized string](./types.md#parameterized-string) | yes |  |
+| key | [expression](./types.md#expression) | yes |  |
 | value | [expression](./types.md#expression) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Environment variable map
 
@@ -220,7 +221,7 @@ The environment variable map object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | map | [reference](./types.md#reference) to a [variable with type map](#question) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Command part
 
@@ -229,7 +230,7 @@ The command part object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | part | [expression](./types.md#expression) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Interface
 
@@ -259,7 +260,7 @@ The show endpoint interface object has the following properties:
 | title | string | yes |  |
 | description | text | no |  |
 | endpoint | [reference](./types.md#reference) to an [endpoint](#endpoint) | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Create endpoint interface
 
@@ -272,7 +273,7 @@ The create endpoint interface object has the following properties:
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes |  |
 | type | [create endpoint type](#create-endpoint-type) | yes |  |
 | port | integer | yes |  |
-| if | [boolean expression](./types.md#boolean-expression) | no |  |
+| if | [expression](./types.md#expression) | no |  |
 
 ## Create endpoint type
 
@@ -290,7 +291,7 @@ The volume interface object has the following properties:
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> Uploaded documents |
 | description | text | no | A short description explaining the user which data is contained in the volume. |
 | volume | [reference](./types.md#reference) to a [volume resource](#resource) | yes | The volume that should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ volume.mysql_data }} |
-| if | [boolean expression](./types.md#boolean-expression) | no | Define dynamically if the volume interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
+| if | [expression](./types.md#expression) | no | Define dynamically if the volume interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
 
 ## Log interface
 
@@ -301,4 +302,4 @@ The log interface object has the following properties:
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> MySQL logs |
 | description | text | no | A short description explaining the user which logs are shown. |
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes | The container of which the logs should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ container.mysql }} |
-| if | [boolean expression](./types.md#boolean-expression) | no | Define dynamically if the log interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
+| if | [expression](./types.md#expression) | no | Define dynamically if the log interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
