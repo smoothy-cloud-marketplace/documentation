@@ -11,8 +11,8 @@ The migration object has the following properties:
 | api | string | yes | The version of the template API that is used in this migration. <br><br> *Example:* <br> v1 |
 | from | string | yes | The semantic version of the application before the migration. <br><br> *Example:* <br> 1.0.0 |
 | to | string | yes | The semantic version of the application after the migration. <br><br> *Example:* <br> 1.0.1 |
-| changes | list of [changes](#change) | no | The changes that need to be applied in order to migrate the application. |
-| form | list of [form steps](template.md#form-step) | no | The form to collect interactive input from the user during the upgrade. |
+| form | list of [form steps](template.md#form-step) | no | The form that the user needs to fill out during the upgrade. If a migration contains both a form and a list of changes, the variables provided through the form are first merged with the existing variables of the application. Then, the list of changes is applied to the updated list of variables. |
+| changes | list of [changes](#change) | no | The changes that need to be applied to the variables of the application in order to make the application compatible with the new version of the template. |
 
 ## Change
 
