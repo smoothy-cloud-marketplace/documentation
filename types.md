@@ -45,47 +45,52 @@ The table below illustrates the possibilities of expressions. In the examples, t
 | Expression | Result |
 |---|---|
 | *string* |  |
-| `Hello` | "Hello" |
-| `Hello {{ variable.name }}` | "Hello John" |
-| `{{ variable.name }}` | "John" |
+| `"Hello"` | `"Hello"` |
+| `"Hello {{ variable.name }}"` | `"Hello John"` |
+| `"{{ variable.name }}"` | `"John"` |
+| `"123"` | `"123"` |
+| `"8.0"` | `"8.0"` |
 | *boolean* |  |
-| `true` | true |
-| `false` | false |
+| `true` | `true` |
+| `false` | `false` |
 | *numbers* |  |
-| `123` | 123 |
-| `123.45` | 123.45 |
+| `123` | `123` |
+| `123.45` | `123.45` |
+| `"{{ 123 }}"` | `123` |
+| `"{{ 123.45 }}"` | `123.45` |
 | *math* |  |
-| `{{ 1 + 1 + 1 }}` | 3 |
-| `{{ 1 + 1 - 1 }}` | 1 |
-| `{{ 9 / 3 - 1 }}` | 2 |
-| `{{ (4 / 3)\|round + 4 }}` | 5 |
-| `price: {{ variable.price * 0.8 }}.99` | "price: 16.99" |
+| `"{{ 1 + 1 + 1 }}"` | `3` |
+| `"{{ 1 + 1 - 1 }}"` | `1` |
+| `"{{ 9 / 3 - 1 }}"` | `2` |
+| `"{{ (4 / 3)\|round + 4 }}"` | `5` |
+| `"1{{ 1 + 1 }}3"` | `"123"` |
+| `"price: {{ variable.price * 0.8 }}.99"` | `"price: 16.99"` |
 | *comparisons* |  |
-| `{{ 1 == 1 }}` | true |
-| `{{ 1 != 1 }}` | false |
-| `{{ 2 < variable.price }}` | true |
-| `{{ 2 >= 2 }}` | true |
-| `{{ 2 is odd }}` | false |
-| `{{ variable.price is even }}` | true |
-| `{{ variable.name == 'Jane' }}` | false |
-| `{{ variable.place == null }}` | true |
-| `{{ variable.price in [16,18,20] }}` | true |
-| `{{ variable.price not in [16,18,20] }}` | false |
+| `"{{ 1 == 1 }}"` | `true` |
+| `"{{ 1 != 1 }}"` | `false` |
+| `"{{ 2 < variable.price }}"` | `true` |
+| `"{{ 2 >= 2 }}"` | `true` |
+| `"{{ 2 is odd }}"` | `false` |
+| `"{{ variable.price is even }}"` | `true` |
+| `"{{ variable.name == 'Jane' }}"` | `false` |
+| `"{{ variable.place == null }}"` | `true` |
+| `"{{ variable.price in [16,18,20] }}"` | `true` |
+| `"{{ variable.price not in [16,18,20] }}"` | `false` |
 | *logic* |  |
-| `{{ variable.price in [16,18,20] and 1 > 2 }}` | false |
-| `{{ variable.price in [16,18,20] or 1 > 2 }}` | true |
+| `"{{ variable.price in [16,18,20] and 1 > 2 }}"` | `false` |
+| `"{{ variable.price in [16,18,20] or 1 > 2 }}"` | `true` |
 | *regular expressions* |  |
-| `{{ '1.0.1' matches '/^[0-9]+\.[0-9]+\.[0-9]+$/' }}` | true |
-| `{{ variable.name matches '/^J.+$/' }}` | true |
+| `"{{ '1.0.1' matches '/^[0-9]+\.[0-9]+\.[0-9]+$/' }}"` | `true` |
+| `"{{ variable.name matches '/^J.+$/' }}"` | `true` |
 | *random string* |  |
-| `{{ str_random() }}` | "M2rbzUqcBKepscWO" |
-| `{{ str_random(8) }}` | "r7PA4fxs" |
+| `"{{ str_random() }}"` | `"M2rbzUqcBKepscWO"` |
+| `"{{ str_random(8) }}"` | `"r7PA4fxs"` |
 | *filters* |  |
-| `Hello {{ variable.name\|upper }}` | "Hello JOHN" |
-| `Hello {{ variable.name\|upper }}` | "Hello JOHN" |
-| `Hello {{ 'john'\|capitalize }}` | "Hello John" |
-| `Hello {{ variable.name\|default('Jane') }}` | "Hello John" |
-| `Hello {{ variable.first_name\|default('Jane') }}` | "Hello Jane" |
+| `"Hello {{ variable.name\|upper }}"` | `"Hello JOHN"` |
+| `"Hello {{ variable.name\|upper }}"` | `"Hello JOHN"` |
+| `"Hello {{ 'john'\|capitalize }}"` | `"Hello John"` |
+| `"Hello {{ variable.name\|default('Jane') }}"` | `"Hello John"` |
+| `"Hello {{ variable.first_name\|default('Jane') }}"` | `"Hello Jane"` |
 
 ## Reference
 
