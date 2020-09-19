@@ -232,12 +232,12 @@ The endpoint object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| protocols | https, tcp, udp | yes |  |
+| protocol | https, tcp, udp | yes |  |
 | services | list of [service references](#service-reference) | yes |  |
 
 ## Service reference
 
-The service link object has the following properties:
+The service reference object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
