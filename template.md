@@ -114,6 +114,8 @@ The following resource types have some additional properties:
 - image: [additional properties](#image)
 - config_file: [additional properties](#config-file)
 - container: [additional properties](#container)
+- service: [additional properties](#service)
+- endpoint: [additional properties](#endpoint)
 
 ## Resource type
 
@@ -123,6 +125,8 @@ The resource type is one of the following strings:
 - volume
 - config_file
 - container
+- service
+- endpoint
 
 ## Image
 
@@ -150,7 +154,6 @@ The container object has the following properties:
 |---|---|---|---|
 | image | [expression](./types.md#expression), [reference](./types.md#reference) to an [Image resource](#resource) | yes |  |
 | image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry) | no |  |
-| endpoints | list of [endpoints](#endpoint) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
@@ -163,26 +166,6 @@ The container object has the following properties:
 Docker Registries can be added on your team's Settings page in Smoothy. You can reference a Docker Registry as follows:
 
 {{ docker_registry.`id` }}
-
-## Endpoint
-
-The endpoint object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| name | string (unique) | yes |  |
-| type | [endpoint type](#endpoint-type) | yes |  |
-| port | integer | yes |  |
-| domain | [expression](./types.md#expression) | no |  |
-| if | [expression](./types.md#expression) | no |  |
-
-## Endpoint type
-
-The endpoint type is one of the following strings:
-
-- container_port
-- host_port
-- domain
 
 ## Config file mount
 
@@ -232,55 +215,43 @@ The command part object has the following properties:
 | part | [expression](./types.md#expression) | yes |  |
 | if | [expression](./types.md#expression) | no |  |
 
-## Interface
+## Service
 
-The interface object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| endpoints | list of [endpoint interfaces](#endpoint-interface) | no |  |
-| volumes | list of [volume interfaces](#volume-interface) | no |  |
-| logs | list of [log interfaces](#log-interface) | no |  |
-
-## Endpoint interface
-
-The endpoint interface object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| show | list of [show endpoint interfaces](#show-endpoint-interface) | no |  |
-| create | list of [create endpoint interfaces](#create-endpoint-interface) | no |  |
-
-## Show endpoint interface
-
-The show endpoint interface object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| title | string | yes |  |
-| description | text | no |  |
-| endpoint | [reference](./types.md#reference) to an [endpoint](#endpoint) | yes |  |
-| if | [expression](./types.md#expression) | no |  |
-
-## Create endpoint interface
-
-The create endpoint interface object has the following properties:
+The service object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
 | title | string | yes |  |
 | description | text | no |  |
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes |  |
-| type | [create endpoint type](#create-endpoint-type) | yes |  |
 | port | integer | yes |  |
+
+## Endpoint
+
+The endpoint object has the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| protocols | https, tcp, udp | yes |  |
+| services | list of [service references](#service-reference) | yes |  |
+
+## Service reference
+
+The service link object has the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| service | [reference](./types.md#reference) to a [service resource](#resource) | yes |  |
 | if | [expression](./types.md#expression) | no |  |
 
-## Create endpoint type
+## Interface
 
-The create endpoint type is one of the following strings:
+The interface object has the following properties:
 
-- host_port
-- domain
+| Property | Type | Required | Description |
+|---|---|---|---|
+| volumes | list of [volume interfaces](#volume-interface) | no |  |
+| logs | list of [log interfaces](#log-interface) | no |  |
 
 ## Volume interface
 
