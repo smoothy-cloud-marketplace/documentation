@@ -226,24 +226,6 @@ The service object has the following properties:
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes |  |
 | port | integer | yes |  |
 
-## Endpoint
-
-The endpoint object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| protocol | https, tcp, udp | yes |  |
-| services | list of [service references](#service-reference) | yes |  |
-
-## Service reference
-
-The service reference object has the following properties:
-
-| Property | Type | Required | Description |
-|---|---|---|---|
-| service | [reference](./types.md#reference) to a [service resource](#resource) | yes |  |
-| if | [expression](./types.md#expression) | no |  |
-
 ## Interface
 
 The interface object has the following properties:
