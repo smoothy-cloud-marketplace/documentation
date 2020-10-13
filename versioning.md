@@ -12,7 +12,7 @@ Semantic version numbers have the following pattern: `MAJOR.MINOR.PATCH`, and st
 - reset the `MINOR` version
 - reset the `PATCH` version
 
-Example: 1.4.2 -> 2.0.0
+Example: `1.4.2` -> `2.0.0`
 
 **When a new version adds functionality in a backward compatible way:**
 
@@ -20,7 +20,7 @@ Example: 1.4.2 -> 2.0.0
 - increase the `MINOR` version
 - reset the `PATCH` version
 
-Example: 1.4.2 -> 1.5.0
+Example: `1.4.2` -> `1.5.0`
 
 **When a new version contains one or more backward compatible bug fixes:**
 
@@ -28,7 +28,7 @@ Example: 1.4.2 -> 1.5.0
 - preserve the `MINOR` version
 - increase the `PATCH` version
 
-Example: 1.4.3 -> 1.5.0
+Example: `1.4.2` -> `1.4.3`
 
 ## Git tags
 
@@ -64,6 +64,8 @@ To create a new template version based on an older commit, run:
 ```
 git tag 1.0.2 15027957951b64cf874c3557a0f3547bd83b3ff6 
 ```
+
+Where `15027957951b64cf874c3557a0f3547bd83b3ff6` is the SHA-1 checksum of the commit.
 
 ### Delete a version
 
