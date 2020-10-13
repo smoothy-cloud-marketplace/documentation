@@ -103,3 +103,22 @@ The reference type is a string with the following format:
 - {{ container.mysql }}
 - {{ endpoint.mysql_internal_endpoint }}
 - {{ volume.mysql_data }}
+
+## Switch
+
+The switch type is an object with the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| switch | list of [cases](#switch-case) | yes |  |
+| default | [expression](#expression) | no |  |
+
+## Switch case
+
+The switch case type is an object with the following properties:
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| case | [expression](#expression) | yes |  |
+| value | [expression](#expression) | yes |  |
+| if | [expression](#expression) | no |  |

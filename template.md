@@ -135,7 +135,7 @@ The image has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | code_repository | [reference](./types.md#reference) to a [variable](#question) of type [code_repository](#question-type) | yes |  |
-| dockerfile | string | yes |  |
+| dockerfile, [switch](./types.md#switch) | string | yes |  |
 | arguments | list of [environment variables](#environment-variable) | no |  |
 
 ## Config file
@@ -144,7 +144,7 @@ The config file object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| contents | text | yes |  |
+| contents | text, [switch](./types.md#switch) | yes |  |
 
 ## Container
 
@@ -152,14 +152,14 @@ The container object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| image | [expression](./types.md#expression), [reference](./types.md#reference) to an [Image resource](#resource) | yes |  |
-| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry) | no |  |
+| image | [expression](./types.md#expression), [reference](./types.md#reference) to an [Image resource](#resource), [switch](./types.md#switch) | yes |  |
+| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry), [switch](./types.md#switch) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
 | command | string, list of [command parts](#command-part) | no |  |
-| memory | integer, [expression](./types.md#expression) | yes |  |
-| cpus | integer, [expression](./types.md#expression) | yes |  |
+| memory | integer, [expression](./types.md#expression), [switch](./types.md#switch) | yes |  |
+| cpus | integer, [expression](./types.md#expression), [switch](./types.md#switch) | yes |  |
 
 ## Docker Registry
 
@@ -224,7 +224,7 @@ The service object has the following properties:
 | title | string | yes |  |
 | description | text | no |  |
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes |  |
-| port | integer | yes |  |
+| port | integer, [switch](./types.md#switch) | yes |  |
 
 ## Interface
 
