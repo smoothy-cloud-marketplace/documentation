@@ -14,12 +14,10 @@ In addition, it also support the following complex types:
 
 - [Binary-number](#binary-number)
 - [Expression](#expression)
-- [Boolean expression](#boolean-expression)
-- [Atom](#atom)
-- [Parameterized string](#parameterized-string)
 - [Reference](#reference)
+- [Switch](#switch)
 
-# Binary number
+## Binary number
 
 The binary number type resembles a number to the power of two. Examples:
 
@@ -111,7 +109,7 @@ The switch type is an object with the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | switch | list of [cases](#switch-case) | yes |  |
-| default | [expression](#expression) | no |  |
+| default | [primitive type](#Types), [expression](#expression) | no |  |
 
 ## Switch case
 
@@ -119,6 +117,6 @@ The switch case type is an object with the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| case | [expression](#expression) | yes |  |
-| value | [expression](#expression) | yes |  |
-| if | [expression](#expression) | no |  |
+| case | [boolean expression](#expression) | yes |  |
+| value | [primitive type](#Types), [expression](#expression) | yes |  |
+| if | [boolean expression](#expression) | no |  |
