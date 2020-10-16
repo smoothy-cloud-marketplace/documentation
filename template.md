@@ -106,7 +106,7 @@ The resource object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | resource | [resource type](#resource-type) | yes |  |
-| name | string (unique per resource type) | yes |  |
+| name | string, [expression](./types.md#expression) (unique per resource type) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
 | loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one resource will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
 
@@ -153,7 +153,7 @@ The container object has the following properties:
 | Property | Type | Required | Description |
 |---|---|---|---|
 | image | string, [expression](./types.md#expression), [reference](./types.md#reference) to an [Image resource](#resource), [switch](./types.md#switch) | yes |  |
-| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry), [switch](./types.md#switch) | no |  |
+| image_registry | [reference](./types.md#reference) to a [Docker Registry](#docker-registry), [switch](./types.md#switch), [expression](./types.md#expression) | no |  |
 | volume_mounts | list of [volume mounts](#volume-mount) | no |  |
 | config_file_mounts | list of [config file mounts](#config-file-mount) | no |  |
 | environment | list of [environment variables](#environment-variable) and [environment variable maps](#environment-variable-map) | no |  |
@@ -173,7 +173,7 @@ The config file mount object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| config_file | [reference](./types.md#reference) to a [config file resource](#resource) | yes |  |
+| config_file | [reference](./types.md#reference) to a [config file resource](#resource), [expression](./types.md#expression) | yes |  |
 | mounth_path | string, [expression](./types.md#expression) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
 
@@ -183,7 +183,7 @@ The volume mount object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| volume | [reference](./types.md#reference) to a [volume resource](#resource) | yes |  |
+| volume | [reference](./types.md#reference) to a [volume resource](#resource), [expression](./types.md#expression) | yes |  |
 | mounth_path | string, [expression](./types.md#expression) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
 
@@ -223,7 +223,7 @@ The service object has the following properties:
 |---|---|---|---|
 | title | string | yes |  |
 | description | text | no |  |
-| container | [reference](./types.md#reference) to a [container resource](#resource) | yes |  |
+| container | [reference](./types.md#reference) to a [container resource](#resource), [expression](./types.md#expression) | yes |  |
 | port | integer, [switch](./types.md#switch) | yes |  |
 
 ## Interface
@@ -243,7 +243,7 @@ The volume interface object has the following properties:
 |---|---|---|---|
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> Uploaded documents |
 | description | text | no | A short description explaining the user which data is contained in the volume. |
-| volume | [reference](./types.md#reference) to a [volume resource](#resource) | yes | The volume that should be shown in the Smoothy interface. <br><br> *Example:* <br> `{* volume.mysql_data *}` |
+| volume | [reference](./types.md#reference) to a [volume resource](#resource), [expression](./types.md#expression) | yes | The volume that should be shown in the Smoothy interface. <br><br> *Example:* <br> `{* volume.mysql_data *}` |
 | if | [boolean expression](./types.md#expression) | no | Define dynamically if the volume interface should be shown. <br><br> *Example:* <br> `{{ variable.mysql_version == '8.0' }}` |
 | loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one volume interface will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
 
@@ -255,6 +255,6 @@ The log interface object has the following properties:
 |---|---|---|---|
 | title | string | yes | The title of the volume interface. <br><br> *Example:* <br> MySQL logs |
 | description | text | no | A short description explaining the user which logs are shown. |
-| container | [reference](./types.md#reference) to a [container resource](#resource) | yes | The container of which the logs should be shown in the Smoothy interface. <br><br> *Example:* <br> `{* container.mysql *}` |
+| container | [reference](./types.md#reference) to a [container resource](#resource), [expression](./types.md#expression) | yes | The container of which the logs should be shown in the Smoothy interface. <br><br> *Example:* <br> `{* container.mysql *}` |
 | if | [boolean expression](./types.md#expression) | no | Define dynamically if the log interface should be shown. <br><br> *Example:* <br> `{{ variable.mysql_version == '8.0' }}` |
 | loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one log interface will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
