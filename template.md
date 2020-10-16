@@ -134,7 +134,7 @@ The image has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| code_repository | [reference](./types.md#reference) to a [variable](#question) of type [code_repository](#question-type) | yes |  |
+| code_repository | [code_repository](#question-type), [expression](./types.md#expression)  | yes |  |
 | dockerfile | string, [switch](./types.md#switch) | yes |  |
 | arguments | list of [environment variables](#environment-variable) | no |  |
 
@@ -165,7 +165,7 @@ The container object has the following properties:
 
 Docker Registries can be added on your team's Settings page in Smoothy. You can reference a Docker Registry as follows:
 
-{{ docker_registry.`id` }}
+{* docker_registry.`id` *}
 
 ## Config file mount
 
@@ -203,7 +203,7 @@ The environment variable map object has the following properties:
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| map | [reference](./types.md#reference) to a [variable with type map](#question) | yes |  |
+| map | map, [expression](./types.md#expression) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
 
 ## Command part

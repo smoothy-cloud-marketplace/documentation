@@ -46,6 +46,7 @@ The table below illustrates the possibilities of expressions. In the examples, t
 | `"Hello"` | `"Hello"` |
 | `"Hello {{ variable.name }}"` | `"Hello John"` |
 | `"{{ variable.name }}"` | `"John"` |
+| `"{* container.{{ 'database' }} *}"` | `"{* container.database *}"` |
 | `"123"` | `"123"` |
 | `"8.0"` | `"8.0"` |
 | *boolean* |  |
@@ -94,13 +95,13 @@ The table below illustrates the possibilities of expressions. In the examples, t
 
 The reference type is a string with the following format:
 
-{{ `type`.`name` }}
+{* `type`.`name` *}
 
 *Examples:*
 
-- {{ container.mysql }}
-- {{ endpoint.mysql_internal_endpoint }}
-- {{ volume.mysql_data }}
+- `{* container.mysql *}`
+- `{* endpoint.mysql_internal_endpoint *}`
+- `{* volume.mysql_data *}`
 
 ## Switch
 
