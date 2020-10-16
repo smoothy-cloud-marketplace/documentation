@@ -95,13 +95,15 @@ The table below illustrates the possibilities of expressions. In the examples, t
 
 The reference type is a string with the following format:
 
-{* `type`.`name` *}
+`{* TYPE.NAME *}`
 
 *Examples:*
 
-- `{* container.mysql *}`
-- `{* endpoint.mysql_internal_endpoint *}`
+- `{* image.vue_image *}`
+- `{* docker_registry.company_registry *}`
+- `{* config_file.nginx_conf *}`
 - `{* volume.mysql_data *}`
+- `{* container.mysql *}`
 
 ## Switch
 

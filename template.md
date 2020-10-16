@@ -165,7 +165,7 @@ The container object has the following properties:
 
 Docker Registries can be added on your team's Settings page in Smoothy. You can reference a Docker Registry as follows:
 
-{* docker_registry.`id` *}
+`{* docker_registry.ID *}`
 
 ## Config file mount
 
