@@ -108,6 +108,7 @@ The resource object has the following properties:
 | resource | [resource type](#resource-type) | yes |  |
 | name | string (unique per resource type) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
+| loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one resource will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
 
 The following resource types have some additional properties:
 
@@ -244,6 +245,7 @@ The volume interface object has the following properties:
 | description | text | no | A short description explaining the user which data is contained in the volume. |
 | volume | [reference](./types.md#reference) to a [volume resource](#resource) | yes | The volume that should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ volume.mysql_data }} |
 | if | [boolean expression](./types.md#expression) | no | Define dynamically if the volume interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
+| loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one volume interface will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
 
 ## Log interface
 
@@ -255,3 +257,4 @@ The log interface object has the following properties:
 | description | text | no | A short description explaining the user which logs are shown. |
 | container | [reference](./types.md#reference) to a [container resource](#resource) | yes | The container of which the logs should be shown in the Smoothy interface. <br><br> *Example:* <br> {{ container.mysql }} |
 | if | [boolean expression](./types.md#expression) | no | Define dynamically if the log interface should be shown. <br><br> *Example:* <br> {{ variable.mysql_version is "8.0" }} |
+| loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one log interface will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
