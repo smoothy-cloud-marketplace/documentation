@@ -196,6 +196,7 @@ The environment variable object has the following properties:
 | key | string, [expression](./types.md#expression) | yes |  |
 | value | [primitive type](./types.md#Types), [expression](./types.md#expression) | yes |  |
 | if | [boolean expression](./types.md#expression) | no |  |
+| loop | list, [expression](./types.md#expression) | no | For each element in the provided list, one environment variable will be added. The value of the element can be accessed via the following expression `{{ loop.value }}`. The index of the item can be accessed via `{{ loop.key }}`. |
 
 ## Environment variable map
 
